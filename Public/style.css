@@ -1,0 +1,39 @@
+.container {
+  padding-top: 250px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  display: flex;
+  text-align: center;
+  flex-flow: column nowrap;
+}
+
+.heading {
+  text-align: center;
+}
+
+input {
+  margin: 5px;
+  padding: 10px;
+}
+
+select {
+  margin: 5px;
+  padding: 10px;
+}
+
+#waitlistButton {
+  position: fixed;
+  top: 200px;
+  left: 800px;
+}
+
+#reservationButton {
+  position: fixed;
+  top: 200px;
+  left: 950px;
+}
