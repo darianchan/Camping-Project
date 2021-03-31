@@ -34,7 +34,7 @@ select {
 #title {
   position: fixed;
   top: 100px;
-  left: 725px;
+  left: 600px;
 }
 
 button {
@@ -43,14 +43,30 @@ button {
   padding: 10px 10px 10px 10px;
 }
 
+button:hover,
+button:focus {
+  background-color: rgba(255, 255, 255, 0.705);
+  color: black;
+  transition: .5s;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+button:focus{
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
 #waitlistButton {
   position: fixed;
   top: 200px;
-  left: 800px;
+  left: 700px;
 }
 
 #reservationButton {
   position: fixed;
   top: 200px;
-  left: 1000px;
+  left: 900px;
 }
+
+\

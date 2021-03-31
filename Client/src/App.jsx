@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <h1 id="title">PLEASE SELECT AN OPTION BELOW</h1>
-        {showWaitlist ? <Waitlist /> : <button id="waitlistButton" onClick={this.showWaitlistForm}>GET ON THE WAITLIST</button>}
+        {showWaitlist ? <Waitlist /> : <button id="waitlistButton" className="raise" onClick={this.showWaitlistForm}>GET ON THE WAITLIST</button>}
         {showReservation ? <Reservations /> : <button id="reservationButton" onClick={this.showReservationForm}>PUT A SPOT UP FOR GRABS</button>  }
       </div>
     )

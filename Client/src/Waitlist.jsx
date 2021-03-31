@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import swal from 'sweetalert';
+
 
 class Waitlist extends React.Component {
   constructor(props) {
@@ -14,6 +16,7 @@ class Waitlist extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault()
     let first = event.target.first.value;
     let last = event.target.last.value;
     let email = event.target.email.value;
@@ -40,6 +43,7 @@ class Waitlist extends React.Component {
     .catch((error) => {
       console.log(error)
     })
+    swal(`Successfully added to the waitlist for ${site}. We will contact you as soon as there is a cancelation`)
   }
 
   handleSiteSelection(event) {

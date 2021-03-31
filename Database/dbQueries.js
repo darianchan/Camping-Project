@@ -5,7 +5,6 @@ const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } = require('../config.js')
 const accountSid = TWILIO_ACCOUNT_SID;
 const authToken = TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
-// const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
 
 const addToWaitlist = function (req, res) {
@@ -30,10 +29,6 @@ const addToWaitlist = function (req, res) {
 }
 
 const alertCanceledReservation = function (req, res) {
-  // const twiml = new MessagingResponse();
-  // twiml.message('yoooooo')
-  // res.writeHead(200, {'Content-Type': 'text/xml'});
-  // res.end(twiml.toString())
 
   let first = req.body.first
   let last = req.body.last
@@ -50,7 +45,7 @@ const alertCanceledReservation = function (req, res) {
     let info = data.rows[0]
     client.messages
       .create({
-         body: `${first} ${last} canceled a reservation at ${site} for the dates: ${start} to ${end}`,
+         body: `${first} ${last} canceled a reservation at ${site} for the dates: ${start} to ${end}. Please visit https://www.reservecalifornia.com/CaliforniaWebHome/ to reserve your spot ASAP!`,
          from: '+14159910321',
          to: '+13027430130'
        })
