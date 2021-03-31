@@ -15,7 +15,10 @@ create table confirmed (
   firstName varchar(50),
   lastName varchar(50),
   email varchar(100),
-  phoneNumber int not null,
-  startDate
-
+  phoneNumber varchar(50) not null,
+  startDate varchar (50),
+  endDate varchar (50),
+  campSite varchar (50),
+  PRIMARY KEY (id)
 )
+

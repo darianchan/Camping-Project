@@ -32,8 +32,9 @@ class App extends React.Component {
     const { showWaitlist, showReservation } = this.state;
     return (
       <div className="container">
-        {showWaitlist ? <Waitlist /> : <button id="waitlistButton" onClick={this.showWaitlistForm}>Get On The Waitlist</button>}
-        {showReservation ? <Reservations /> : <button id="reservationButton" onClick={this.showReservationForm}>Put a Spot up For Grabs</button>  }
+        <h1 id="title">PLEASE SELECT AN OPTION BELOW</h1>
+        {showWaitlist ? <Waitlist /> : <button id="waitlistButton" onClick={this.showWaitlistForm}>GET ON THE WAITLIST</button>}
+        {showReservation ? <Reservations /> : <button id="reservationButton" onClick={this.showReservationForm}>PUT A SPOT UP FOR GRABS</button>  }
       </div>
     )
   }
