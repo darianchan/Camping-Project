@@ -5,17 +5,8 @@ const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } = require('../config.js')
 const accountSid = TWILIO_ACCOUNT_SID;
 const authToken = TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
+// const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
-// this code below will send the text message
-// client.messages
-//   .create({
-//      body: 'yo',
-//      from: '+14159910321',
-//      to: '+15105993143'
-//    })
-//   .then(message => console.log(message.sid));
-
-// write function to query first person in the database
 
 const addToWaitlist = function (req, res) {
   let first = req.body.first
@@ -39,6 +30,11 @@ const addToWaitlist = function (req, res) {
 }
 
 const alertCanceledReservation = function (req, res) {
+  // const twiml = new MessagingResponse();
+  // twiml.message('yoooooo')
+  // res.writeHead(200, {'Content-Type': 'text/xml'});
+  // res.end(twiml.toString())
+
   let first = req.body.first
   let last = req.body.last
   let email = req.body.email
@@ -56,10 +52,9 @@ const alertCanceledReservation = function (req, res) {
       .create({
          body: `${first} ${last} canceled a reservation at ${site} for the dates: ${start} to ${end}`,
          from: '+14159910321',
-         to: '+17146565070'
+         to: '+13027430130'
        })
-  .then(message => console.log(message.sid));
-    res.send()
+  .then(message => console.log(message.sid))
   })
   .catch((error) => {
     console.log(error)
